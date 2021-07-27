@@ -5,6 +5,7 @@ import (
 	"strconv"
 )
 
+// SearchRequest struct.
 type SearchRequest struct {
 	FromCoordinate string
 	ToCoordinate   string
@@ -19,6 +20,7 @@ type SearchRequest struct {
 	Sort           string
 }
 
+// SearchResponse from API.
 type SearchResponse struct {
 	Link       string       `json:"link"`
 	SearchInfo SearchInfo   `json:"search_info"`
@@ -26,6 +28,9 @@ type SearchResponse struct {
 	NextCursor string       `json:"next_cursor"`
 }
 
+// Search API method.
+//
+// https://support.blablacar.com/hc/en-gb/articles/360014199820--Search-V3-API-Documentation
 func (c *Client) Search(ctx context.Context, request *SearchRequest) (*SearchResponse, error) {
 	u := "api/v3/trips"
 

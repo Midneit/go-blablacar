@@ -6,6 +6,7 @@ import (
 	"time"
 )
 
+// GetDetailsResponse struct.
 type GetDetailsResponse struct {
 	Links                  Links       `json:"links"`
 	DepartureDate          string      `json:"departure_date"`
@@ -51,6 +52,9 @@ type GetDetailsResponse struct {
 	IsWrongGender               bool `json:"is_wrong_gender"`
 }
 
+// GetDetails API method.
+//
+// https://support.blablacar.com/hc/en-gb/articles/360014264519--Trip-Details-API-Documentation
 func (c *Client) GetDetails(ctx context.Context, tripID, locale string) (*GetDetailsResponse, error) {
 	u := fmt.Sprintf("api/v2/trips/%s?locale=%s", tripID, locale)
 

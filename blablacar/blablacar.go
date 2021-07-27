@@ -18,6 +18,7 @@ const (
 	userAgent      = "go-blablacar"
 )
 
+// Client for BlaBlaCar API.
 type Client struct {
 	client  *http.Client
 	BaseURL *url.URL
@@ -27,6 +28,7 @@ type Client struct {
 	token string
 }
 
+// NewClient returns new BlaBlaCar API client.
 func NewClient(token string) *Client {
 	baseURL, _ := url.Parse(defaultBaseURL)
 
@@ -38,6 +40,7 @@ func NewClient(token string) *Client {
 	}
 }
 
+// NewRequest creates an API request.
 func (c *Client) NewRequest(method, urlStr string, body interface{}) (*http.Request, error) {
 	if !strings.HasSuffix(c.BaseURL.Path, "/") {
 		return nil, fmt.Errorf("BaseURL must have a trailing slash, but %q does not", c.BaseURL)
@@ -74,6 +77,7 @@ func (c *Client) NewRequest(method, urlStr string, body interface{}) (*http.Requ
 	return req, nil
 }
 
+// BareDo sends an API request and lets you handle the api response.
 func (c *Client) BareDo(ctx context.Context, req *http.Request) (*http.Response, error) {
 	if ctx == nil {
 		return nil, errors.New("ctx must be not nil")
@@ -100,6 +104,7 @@ func (c *Client) BareDo(ctx context.Context, req *http.Request) (*http.Response,
 	return resp, err
 }
 
+// Do sends an API request and returns the API response.
 func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*http.Response, error) {
 	resp, err := c.BareDo(ctx, req)
 	if err != nil {
@@ -142,6 +147,7 @@ type malformedError struct {
 	Field string `json:"field"`
 }
 
+// CheckResponse checks the API response for errors, and returns them.
 func CheckResponse(r *http.Response) error {
 	if c := r.StatusCode; 200 <= c && c <= 299 {
 		return nil
