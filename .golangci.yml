@@ -1,8 +1,6 @@
 run:
   timeout: 5m
   modules-download-mode: mod
-  skip-dirs:
-    - docs
 
 linters:
   enable:

@@ -5,13 +5,13 @@ type ErrorType int
 
 const (
 	// ErrInvalidToken error.
-	ErrInvalidToken     ErrorType = 1
+	ErrInvalidToken ErrorType = 1
 	// ErrRouteNotFound error
-	ErrRouteNotFound    ErrorType = 2
+	ErrRouteNotFound ErrorType = 2
 	// ErrMethodNotAllowed error
 	ErrMethodNotAllowed ErrorType = 3
 	// ErrTripNotFound error
-	ErrTripNotFound     ErrorType = 4
+	ErrTripNotFound ErrorType = 4
 	// ErrMalformedRequest error
 	ErrMalformedRequest ErrorType = 5
 )
