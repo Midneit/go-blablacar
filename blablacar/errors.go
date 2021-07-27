@@ -4,7 +4,7 @@ package blablacar
 type ErrorType int
 
 const (
-	ErrInvalidToken     ErrorType = 1
+	ErrInvalidToken     ErrorType = 1 // ErrInvalidToken error
 	ErrRouteNotFound    ErrorType = 2
 	ErrMethodNotAllowed ErrorType = 3
 	ErrTripNotFound     ErrorType = 4
