@@ -1,4 +1,4 @@
-![go-blablacar logo](https://github.com/Midneit/go-blablacar/blob/master/logo/logo.png?raw=true)
+![go-blablacar logo](https://github.com/Midneit/go-blablacar/blob/master/logo/logo.svg?raw=true)
 go-blablacar is a Go client library for accessing the [BlaBlaCar API](https://support.blablacar.com/hc/en-gb/sections/360004167199-Documentation-BlaBlaCar-API).
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/Midneit/go-blablacar.svg)](https://pkg.go.dev/github.com/Midneit/go-blablacar)
